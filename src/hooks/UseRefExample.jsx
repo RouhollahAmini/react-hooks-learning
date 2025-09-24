@@ -36,19 +36,19 @@ const UseRefExample = () => {
                     </div>
                 </div>
                 <div className="w-1/2 flex flex-col items-center justify-center gap-4">
-                    <p>
+                    <p className="shadow-lg px-4 py-2">
                         نام ورودی برابر است با : 
                         <span className="font-bold text-white bg-blue-600 rounded-md">
                             {name}
                         </span>
                     </p>
-                    <p>
+                    <p className="shadow-lg px-4 py-2">
                         نام ورودی قبلی برابر است با : 
                         <span className="font-bold text-white bg-blue-600 rounded-md">
                             {prevName.current}
                         </span>
                     </p>
-                    <p>
+                    <p className="shadow-lg px-4 py-2">
                         تعداد رندر انجام شده تا به الان : 
                         <span className="font-bold text-white bg-blue-600 rounded-md">
                             {renderCount.current}
@@ -56,7 +56,6 @@ const UseRefExample = () => {
                     </p>
                     <label htmlFor="Email" className="relative w-full shadow-lg">
                         <input
-                            
                             onChange={(e) => setName(e.target.value)}
                             ref={inputRef}
                             type="text"
@@ -70,7 +69,7 @@ const UseRefExample = () => {
                         className="w-full inline-block shadow-lg rounded-sm border border-blue-600 bg-blue-600 px-6 py-2 text-sm font-medium text-white hover:bg-transparent hover:text-indigo-600 focus:ring-3 focus:outline-hidden"
                         href="#"
                     >
-                        تمرکز کن
+                        تمرکز کن و یه چیزی بنویس
                     </button>
                 </div>
             </div>
