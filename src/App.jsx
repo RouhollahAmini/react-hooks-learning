@@ -1,5 +1,6 @@
 import Accordion from './components/Accordion';
 import UseRefExample from './hooks/UseRefExample';
+import UseMemoExample from './hooks/UseMemoExample';
 
 import './App.css'
 
@@ -15,6 +16,9 @@ function App() {
             <hr className='bg-gray-600/40 shadow-lg' />
             <Accordion title='مثال هوک useRef'>
                 <UseRefExample />
+            </Accordion>
+            <Accordion title='مثال هوک useMemo'>
+                <UseMemoExample />
             </Accordion>
             
         </div>
