@@ -1,32 +1,30 @@
-import { useEffect, useState, useMemo } from 'react';
+import { useEffect, useState, useCallback } from 'react';
 
-const superSlowFunction = (num) => {
-    console.log("super slow function is running ... 🏃‍♂️")
-    let count = 0;
-    while (count < 100000000) {
-        count++;
-    }
-    return num * 2;
-}
-const UseMemoExample = () => {
+const List = ({ getItems }) => {
+    const [items, setItems] = useState([]);
+
+    useEffect(() => {
+        setItems(getItems());
+        console.log("Updating items ... ")
+    }, [getItems]);
+
+    return items.map((item, index) => <div key={index}>{item}</div>);
+};
+const UseCallbackExample = () => {
 
     const [number, setNumber] = useState(1);
     const [colorChange, setColorChange] = useState(false);
 
     // using useMemo for heavy or slow function
-    const doubleNumber = useMemo(() =>
-        superSlowFunction(number)
-        , [number])
+    const getItems = useCallback(() => {
+        return [number, number + 1, number + 2]
+    }, [number]);
 
     // using useMemo for refrential equality
     // refrential equality means if the value is same then it will not re-render
-    const appStyle = useMemo(() => {
-        return { backgroundColor: colorChange ? 'orange' : '' };
-    }, [colorChange])
-
-    useEffect(() => {
-        console.log("background color changed 🌈");
-    }, [appStyle])
+    const appStyle = {
+        backgroundColor: colorChange ? 'orange' : ''
+    };
 
     return (
         <div className="container">
@@ -59,10 +57,7 @@ const UseMemoExample = () => {
                         رنگ رو تغییر بده
                     </button>
                     <div style={appStyle} className='text-center mx-auto'>
-                        {/* paragraph with alert warning style */}
-                        <p className="text-red-500">
-                            عدد دوبرابر شده برابر است با :
-                            {doubleNumber}</p>
+                        <List getItems={getItems} />
                     </div>
                 </div>
             </div>
@@ -71,4 +66,4 @@ const UseMemoExample = () => {
     )
 }
 
-export default UseMemoExample;
+export default UseCallbackExample;
