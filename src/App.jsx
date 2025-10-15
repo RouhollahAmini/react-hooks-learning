@@ -1,5 +1,5 @@
 import Accordion from './components/Accordion';
-import { UseRefExample, UseMemoExample, UseCallbackExample, UseReducerExample } from './hooks';
+import { UseRefExample, UseMemoExample, UseCallbackExample, UseReducerExample, UseLayoutEffectExample } from './hooks';
 
 import './App.css'
 
@@ -24,6 +24,9 @@ function App() {
             </Accordion>
             <Accordion title='مثال هوک useReducer'>
                 <UseReducerExample />
+            </Accordion>
+            <Accordion title='مثال هوک useLayoutEffect'>
+                <UseLayoutEffectExample />
             </Accordion>
         </div>
     )
