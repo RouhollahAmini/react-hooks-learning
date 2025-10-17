@@ -5,7 +5,8 @@ import {
     UseCallbackExample,
     UseReducerExample,
     UseLayoutEffectExample,
-    UseImperativeHandleExample
+    UseImperativeHandleExample,
+    UseDeferredValueExample
     } from './hooks';
 
 import './App.css'
@@ -37,6 +38,9 @@ function App() {
             </Accordion>
             <Accordion title='مثال هوک useImperativeHandle'>
                 <UseImperativeHandleExample />
+            </Accordion>
+            <Accordion title='مثال هوک useDeferredValue'>
+                <UseDeferredValueExample />
             </Accordion>
         </div>
     )
