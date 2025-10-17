@@ -1,13 +1,14 @@
 import Accordion from './components/Accordion';
-import { 
+import {
     UseRefExample,
     UseMemoExample,
     UseCallbackExample,
     UseReducerExample,
     UseLayoutEffectExample,
     UseImperativeHandleExample,
-    UseDeferredValueExample
-    } from './hooks';
+    UseDeferredValueExample,
+    UseTransitionExample
+} from './hooks';
 
 import './App.css'
 
@@ -41,6 +42,9 @@ function App() {
             </Accordion>
             <Accordion title='مثال هوک useDeferredValue'>
                 <UseDeferredValueExample />
+            </Accordion>
+            <Accordion title='مثال هوک useTransition'>
+                <UseTransitionExample />
             </Accordion>
         </div>
     )
